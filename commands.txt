@@ -1,0 +1,4 @@
+# Build dev env with mounting kernel sources files to container
+
+docker build -t dev-kernel .
+docker run -it --rm -v ./linux-6.11.2:/linux_kernel dev-kernel zsh
