@@ -1,0 +1,16 @@
+zsh
+git
+neovim
+curl
+build-essential
+xz-utils
+libssl-dev
+bc
+flex
+libelf-dev
+bison
+gawk
+texinfo
+fdisk
+man
+

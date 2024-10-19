@@ -1,4 +1,19 @@
 # Build dev env with mounting kernel sources files to container
+# wont owrk with docker at schewl, problem of capabilities docker while creating a loop device
 
 docker build -t dev-kernel .
 docker run -it --rm -v ./linux-6.11.2:/linux_kernel dev-kernel zsh
+
+# so we go to the vm version
+lsblk --> list block to check where i can partition my disk or create a loop device
+
+# create loop device 16 gigs for my os
+
+# create file
+dd if=/dev/zero of=./loopfile bs=1024 count=16000000
+# check which loop device we can use to attach our file, by finding unused loopback device
+losetup -f
+# use last command output, here /dev/loop0 to attach our loop file
+losetup /dev/loop0 ./loopfile
+# confirm creation of the loopback
+losetup /dev/loop0
