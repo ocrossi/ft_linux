@@ -1,0 +1,6 @@
+label: gpt
+unit: sectors
+
+disk.img1 : start=, size=1024, type=EF02
+disk.img2 : start=, size=36700160, type=8300
+disk.img3 : start=36704256, size=3965440, type=8200

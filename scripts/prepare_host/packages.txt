@@ -13,4 +13,5 @@ gawk
 texinfo
 fdisk
 man
-
+libfuse2
+tmux
