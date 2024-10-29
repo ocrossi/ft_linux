@@ -32,6 +32,10 @@ display_command 	"unattach loop device" \
 			'losetup -d $free_loopdevice'
 display_command 	"reattach loop device while scanning for partitions" \
 			'losetup -P $free_loopdevice $file'
+
+display_command 	"add previous commands to $config_file" \
+			'echo "cat $partition_blueprint | sfdisk $file &>/dev/null; losetup -P $free_loopdevice $file" >> $config_file'
+
 home_part=$free_loopdevice"p2"
 swap_part=$free_loopdevice"p3"
 
