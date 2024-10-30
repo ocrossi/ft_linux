@@ -20,3 +20,5 @@ popd
 make FILE_COMPILE=$(pwd)/build/src/file
 make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/libmagic.la
+popd
+rm -rf file-5.45

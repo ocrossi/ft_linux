@@ -13,3 +13,5 @@ echo Building tar-1.35
 
 make
 make DESTDIR=$LFS install
+popd
+rm -rf tar-1.35

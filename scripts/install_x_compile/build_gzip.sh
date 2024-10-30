@@ -10,3 +10,5 @@ echo Building gzip-1.13.tar.xz
 ./configure --prefix=/usr --host=$LFS_TGT
 make
 make DESTDIR=$LFS install
+popd
+rm -rf gzip-1.13

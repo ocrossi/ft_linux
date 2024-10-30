@@ -15,3 +15,5 @@ echo Buildidng xz-5.6.2
 make
 make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/liblzma.la
+popd
+rm -rf xz-5.6.2

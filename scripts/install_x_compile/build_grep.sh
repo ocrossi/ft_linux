@@ -11,3 +11,5 @@ echo Buidling grep-3.11
             --build=$(./build-aux/config.guess)
 make
 make DESTDIR=$LFS install
+popd
+rm -rf grep-3.11

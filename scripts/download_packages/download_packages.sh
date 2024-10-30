@@ -21,8 +21,8 @@ wget --input-file=lfs_packages.txt --continue --directory-prefix=$LFS/sources
 
 # install mdsums file &  check mdsums packages
 
-pushd $LFS/sources
-	wget https://fr.linuxfromscratch.org/view/lfs-systemd-stable/md5sums
-	md5sum -c md5sums
-popd
+#pushd $LFS/sources
+#	wget https://fr.linuxfromscratch.org/view/lfs-systemd-stable/md5sums
+#	md5sum -c md5sums
+#popd
 

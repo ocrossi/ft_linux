@@ -11,3 +11,5 @@ pushd diffutils-3.10
             --build=$(./build-aux/config.guess)
 make
 make DESTDIR=$LFS install
+popd
+rm -rf diffutils-3.10

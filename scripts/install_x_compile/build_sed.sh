@@ -12,3 +12,5 @@ echo Building sed-4.9
             --build=$(./build-aux/config.guess)
 make
 make DESTDIR=$LFS install
+popd
+rm -rf sed-4.9

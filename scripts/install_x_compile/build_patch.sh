@@ -12,3 +12,5 @@ echo Building patch-2.7.6
             --build=$(build-aux/config.guess)
 make
 make DESTDIR=$LFS install
+popd
+rm -rf patch-2.7.6

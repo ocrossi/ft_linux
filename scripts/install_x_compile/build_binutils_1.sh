@@ -24,3 +24,7 @@ cd       build
 
 make
 make install
+
+popd
+rm -rf binutils-2.43.1
+

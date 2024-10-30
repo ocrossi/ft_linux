@@ -16,3 +16,5 @@ echo "Building bash-5.2.32"
 make
 make DESTDIR=$LFS install
 ln -sv bash $LFS/bin/sh
+popd
+rm -rf bash-5.2.32

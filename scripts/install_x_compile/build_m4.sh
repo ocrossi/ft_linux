@@ -14,3 +14,5 @@ pushd m4-1.4.19
 
 make
 make DESTDIR=$LFS install
+popd
+rm -rf m4-1.4.19

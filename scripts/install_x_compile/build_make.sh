@@ -14,3 +14,5 @@ echo Building make-4.4.1
 
 make
 make DESTDIR=$LFS install
+popd
+rm -rf make-4.4.1

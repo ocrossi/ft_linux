@@ -15,19 +15,16 @@ fi
 # new group lfs & new user lfs inside lfs group  with home dir & no profile files import
 
 
-tst=`getent group lfs`
-if [ ! -z $tst ];then
-	echo group lfs found
-else
-	echo group lfs not found, coninuing ...
+if [ -z `getent group lfs` ];then
+	echo group lfs not found, continuing ...
 	groupadd lfs
 	useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 	echo "lfs:lfs" | chpasswd
+else
+	echo group lfs found
 fi
 
 chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
   x86_64) chown -v lfs $LFS/lib64 ;;
 esac
-
-su - lfs

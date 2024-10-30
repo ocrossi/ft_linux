@@ -15,3 +15,5 @@ sed -i 's/extras//' Makefile.in
 
 make
 make DESTDIR=$LFS install
+popd 
+rm -rf gawk-5.3.0

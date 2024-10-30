@@ -47,3 +47,5 @@ cd       build
 make
 make DESTDIR=$LFS install
 ln -sv gcc $LFS/usr/bin/cc
+popd
+rm -rf gcc-14.2.0

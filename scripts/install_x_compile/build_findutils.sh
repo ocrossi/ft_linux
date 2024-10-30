@@ -14,3 +14,5 @@ echo "Building findutils-4.10.0"
 
 make
 make DESTDIR=$LFS install
+popd
+rm -rf findutils-4.10.0

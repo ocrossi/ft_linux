@@ -6,7 +6,7 @@ cd /mnt/lfs/sources
 tar xf glibc-2.40.tar.xz
 echo "Building glibc-2.40"
 
-cd glibc-2.40
+pushd glibc-2.40
 
 #link 64 bits libs
 case $(uname -m) in
@@ -36,4 +36,5 @@ echo "rootsbindir=/usr/sbin" > configparms
 
 make
 make DESTDIR=$LFS install
-
+popd
+rm -rf glibc-2.40
