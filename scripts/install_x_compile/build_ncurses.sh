@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 cd /mnt/lfs/sources
 
 tar xf ncurses-6.5.tar.gz

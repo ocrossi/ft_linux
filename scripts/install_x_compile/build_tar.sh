@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 cd /mnt/lfs/sources
 
 tar xf tar-1.35.tar.xz

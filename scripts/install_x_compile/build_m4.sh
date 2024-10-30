@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 cd /mnt/lfs/sources
 
 tar xf m4-1.4.19.tar.xz

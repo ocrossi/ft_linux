@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 cd /mnt/lfs/sources
 tar xf linux-6.10.5.tar.xz
 echo "Building linux-6.10.5"

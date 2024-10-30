@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 cd /mnt/lfs/sources
 
 tar xf make-4.4.1.tar.gz

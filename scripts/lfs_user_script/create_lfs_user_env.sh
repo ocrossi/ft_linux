@@ -1,8 +1,7 @@
-
 #!/bin/bash
 
 # stop on any error
-set -eou pipefail
+set -euo pipefail
 
 if [ $HOME != "/home/lfs" ]; then
 		echo "wont run script, goodbye"

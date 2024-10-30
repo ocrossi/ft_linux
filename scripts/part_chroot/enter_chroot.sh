@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eou pipefail
+set -euo pipefail
 
 chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # stop on any error
-set -eou pipefail
+set -euo pipefail
 
 # minimal user file hierarchy
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}

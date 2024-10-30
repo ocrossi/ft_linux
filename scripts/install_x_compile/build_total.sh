@@ -1,3 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+
+
 # build part 5, cross compile tool chain
 sh build_binutils_1.sh
 sh build_gcc_1.sh
