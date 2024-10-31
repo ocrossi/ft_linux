@@ -44,15 +44,16 @@ popd
 echo "Done"
 
 echo "Chroot possibilities"
+cp -rf create_userland /mnt/lfs/
 pushd part_chroot
-	cp -rf create_userland /mnt/lfs/
 	sh chroot.sh
 	sh prepare_virtual_files_kernel.sh
-	sh enter_chroot.sh
 popd
 
-echo "Create userland"
-pushd /create_userland
-	sh create_repertories_and_links.sh
-	sh build_toolchain_final.sh
-popd
+#echo "Create userland"
+#pushd /create_userland
+#	su lfs -c "sh enter_chroot.sh &&
+#	sh create_repertories_and_links.sh &&
+#	sh build_toolchain_final.sh &>out_install.txt &&
+#	sh cleanup.sh"
+#popd
