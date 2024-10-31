@@ -52,8 +52,5 @@ set -euo pipefail
 
 echo "Create userland"
 pushd create_userland
-	sh enter_chroot.sh &&
-	sh create_repertories_and_links.sh &&
-	sh build_toolchain_final.sh &>out_install.txt &&
-	sh cleanup.sh
+	sh enter_chroot.sh 
 popd

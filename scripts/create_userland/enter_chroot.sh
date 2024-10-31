@@ -9,4 +9,9 @@ chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     MAKEFLAGS="-j$(nproc)"      \
     TESTSUITEFLAGS="-j$(nproc)" \
-    /bin/bash --login
+    /bin/bash --login <<"EOT"
+cd /create_userland && ls -l >/test
+sh create_repertories_and_links.sh &&
+sh build_toolchain_final.sh &>out_install.txt &&
+sh cleanup.sh
+EOT
