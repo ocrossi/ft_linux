@@ -37,4 +37,5 @@ echo "rootsbindir=/usr/sbin" > configparms
 make
 make DESTDIR=$LFS install
 popd
+popd
 rm -rf glibc-2.40

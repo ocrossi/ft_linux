@@ -10,8 +10,8 @@ pushd binutils-2.43.1
 
 echo "Building binutils-2.43.1"
 
-mkdir -v build
-cd       build
+mkdir -vp build
+pushd     build
 
 ../configure --prefix=$LFS/tools \
              --with-sysroot=$LFS \
@@ -26,5 +26,5 @@ make
 make install
 
 popd
+popd
 rm -rf binutils-2.43.1
-

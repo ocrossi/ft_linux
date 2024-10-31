@@ -20,7 +20,7 @@ pushd    build
 
 make
 make DESTDIR=$LFS install
-
+popd
 rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la
 popd
 rm -rf gcc-14.2.0

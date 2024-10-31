@@ -3,18 +3,12 @@
 # stop on any error
 set -euo pipefail
 
-if [ $HOME != "/home/lfs" ]; then
-		echo "wont run script, goodbye"
-		exit
-	else
-		echo "am user lfs, lets go"
-fi
 
-cat > ~/.bash_profile << "EOF"
-exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
-EOF
+#cat > ~/.bash_profile << "EOF"
+#exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+#EOF
 
-cat > ~/.bashrc << "EOF"
+cat > /home/lfs/.bashrc << "EOF"
 set +h
 umask 022
 LFS=/mnt/lfs
@@ -25,4 +19,10 @@ if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
 PATH=$LFS/tools/bin:$PATH
 CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
+EOF
+
+[ ! -e /etc/bash.bashrc ] || mv -v /etc/bash.bashrc /etc/bash.bashrc.NOUSE
+
+cat >> /home/lfs/.bashrc << "EOF"
+export MAKEFLAGS=-j$(nproc)
 EOF
