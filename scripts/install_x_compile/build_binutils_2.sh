@@ -27,4 +27,3 @@ make DESTDIR=$LFS install
 rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes,sframe}.{a,la}
 popd
 rm -rf binutils-2.43.1
-echo Building binutils-2.43.1

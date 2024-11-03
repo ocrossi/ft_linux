@@ -15,3 +15,4 @@ fdisk
 man
 libfuse2
 tmux
+qemu-utils
