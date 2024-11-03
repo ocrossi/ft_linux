@@ -53,5 +53,8 @@ popd
 
 echo "Create userland"
 pushd create_userland
+	
 	sh enter_chroot.sh 
+		
 popd
+
