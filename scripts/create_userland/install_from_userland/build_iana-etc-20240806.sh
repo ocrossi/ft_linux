@@ -9,5 +9,7 @@ pushd iana-etc-20240806
 
 echo "Building iana-etc-20240806"
 
+cp services protocols /etc
+
 popd
 rm -rf iana-etc-20240806
