@@ -9,5 +9,9 @@ pushd attr-2.5.2
 
 echo "Building attr-2.5.2"
 
+make
+make check
+make install
+
 popd
 rm -rf attr-2.5.2
