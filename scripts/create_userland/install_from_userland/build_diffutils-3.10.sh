@@ -9,5 +9,11 @@ pushd diffutils-3.10
 
 echo "Building diffutils-3.10"
 
+./configure --prefix=/usr
+make
+make check
+make install
+
+
 popd
 rm -rf diffutils-3.10

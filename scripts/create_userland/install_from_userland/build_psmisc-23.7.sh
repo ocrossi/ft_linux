@@ -9,5 +9,11 @@ pushd psmisc-23.7
 
 echo "Building psmisc-23.7"
 
+./configure --prefix=/usr
+make 
+make check
+make install
+
+
 popd
 rm -rf psmisc-23.7
