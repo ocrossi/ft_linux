@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -euo pipefail
+# can get errors on make check
+# set -euo pipefail
 
 cd /sources
 

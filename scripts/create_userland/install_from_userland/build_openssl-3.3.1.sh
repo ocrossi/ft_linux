@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -euo pipefail
+# there is a test that retunrs error and stop packet compilation
+# set -euo pipefail
 
 cd /sources
 

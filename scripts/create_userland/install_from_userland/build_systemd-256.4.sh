@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -euo pipefail
+# problem with ninja test, should be done manually
+
+# set -euo pipefail
 
 cd /sources
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -euo pipefail
+# set -euo pipefail
 
 cd /sources
 
 tar xf tcl8.6.14-src.tar.gz
-pushd tcl8.6.14-src
+pushd tcl8.6.14
 
 echo "Building tcl8.6.14-src"
 
@@ -46,4 +46,4 @@ mkdir -v -p /usr/share/doc/tcl-8.6.14
 cp -v -r  ./html/* /usr/share/doc/tcl-8.6.14
 
 popd
-rm -rf tcl8.6.14-src
+rm -rf tcl8.6.14

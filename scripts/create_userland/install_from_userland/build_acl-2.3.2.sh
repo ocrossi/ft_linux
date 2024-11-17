@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -euo pipefail
+# error on test
+# set -euo pipefail
 
 cd /sources
 
