@@ -11,10 +11,13 @@ echo "Done"
 
 echo "Downloads packages ... "
 pushd download_packages
-	time sh download_packages.sh  &>download_packages.txt
+	time sh download_packages.sh  1>download_packages.txt 2>errors_downloads.txt
+echo 1
 popd
+echo 2
 echo "Done"
 
+echo 3
 echo "Prepare filesystem ... "
 pushd prepare_filesystem
 	sh create_fs.sh  &>>prepare_filesystem.txt
