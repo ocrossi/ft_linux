@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd /sources
 
-tar xf expat-2.6.2.tar.xz
+tar xf expat-2.6.2.tar.gz
 pushd expat-2.6.2
 
 echo "Building expat-2.6.2"

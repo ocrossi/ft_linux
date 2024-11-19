@@ -18,6 +18,8 @@ echo "Building bash-5.2.32"
 
 make
 
+
+ tests font planter vm ecole...
 chown -R tester .
 
 su -s /usr/bin/expect tester << "EOF"
@@ -29,7 +31,9 @@ exit $value
 EOF
 
 make install
-exec /usr/bin/bash --login
+
+# lance un bash et tourne dans le vide
+# exec /usr/bin/bash --login
 
 
 popd

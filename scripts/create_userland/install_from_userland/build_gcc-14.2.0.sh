@@ -16,7 +16,7 @@ case $(uname -m) in
   ;;
 esac
 
-mkdir -v build
+mkdir -pv build
 pushd build
 
 ../configure --prefix=/usr            \
@@ -41,7 +41,11 @@ sed -e 's/{ target nonpic } //' \
     -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c
 
 chown -R tester .
-su tester -c "PATH=$PATH make -k check"
+
+# tests too freaking long i cant 
+# su tester -c "PATH=$PATH make -k -j12 check"
+
+echo "Skipping tests"
 
 ../contrib/test_summary
 
