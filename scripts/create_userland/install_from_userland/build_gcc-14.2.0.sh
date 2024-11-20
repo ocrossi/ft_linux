@@ -43,7 +43,7 @@ sed -e 's/{ target nonpic } //' \
 chown -R tester .
 
 # tests too freaking long i cant 
-# su tester -c "PATH=$PATH make -k -j12 check"
+su tester -c "PATH=$PATH make -k -j4 check"
 
 echo "Skipping tests"
 

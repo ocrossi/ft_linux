@@ -36,7 +36,9 @@ mkdir -p /etc/default
 useradd -D --gid 999
 
 echo Enter root user password
-passwd root
+
+# only for tests
+echo "root" | passwd root
 
 
 popd

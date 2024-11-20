@@ -1,2 +1,2 @@
 Setting up swapspace version 1, size = 4 GiB (4291817472 bytes)
-no label, UUID=f3fcb9de-fd03-40a4-aba8-52307018ad77
+no label, UUID=fe2e48c4-c88d-4c46-8d9d-5e1d3b6a459d
