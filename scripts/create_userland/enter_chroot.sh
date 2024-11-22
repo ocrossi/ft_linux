@@ -14,4 +14,5 @@ cd /create_userland && ls -l >/test
 sh create_repertories_and_links.sh &&
 sh build_toolchain_final.sh &>out_install.txt &&
 sh cleanup.sh
+cd /create_userland/install_from_userland && sh colonel_build.sh
 EOT

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -e
 
 echo "Building loop device ... "
 pushd build_loopdevice
