@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-cd /create_userland
+cd /6_prepare_userland
 
 sh install_getext.sh
 sh install_bison.sh

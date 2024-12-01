@@ -10,9 +10,8 @@ chroot "$LFS" /usr/bin/env -i   \
     MAKEFLAGS="-j$(nproc)"      \
     TESTSUITEFLAGS="-j$(nproc)" \
     /bin/bash --login <<"EOT"
-cd /create_userland && ls -l >/test
+cd /6_prepare_userland &&
 sh create_repertories_and_links.sh &&
 sh build_toolchain_final.sh &>out_install.txt &&
 sh cleanup.sh
-cd /create_userland/install_from_userland && sh colonel_build.sh
 EOT

@@ -2,62 +2,53 @@
 
 set -e
 
-echo "Building loop device ... "
-pushd build_loopdevice
-	time sh create_loopdevice.sh
-	export LFS=/mnt/lfs
-popd
-echo "Done"
-
-echo "Downloads packages ... "
-pushd download_packages
-	time sh download_packages.sh  1>download_packages.txt 2>errors_downloads.txt
-echo 1
-popd
-echo 2
-echo "Done"
-
-echo 3
-echo "Prepare filesystem ... "
-pushd prepare_filesystem
-	sh create_fs.sh  &>>prepare_filesystem.txt
-	echo "==================================="
-	sh create_lfs_user.sh &>>prepare_filesystem.txt
-popd
-cp lfs_user_script/create_lfs_user_env.sh /
-echo "Done"
-
-echo "Prepare lfs user env ... "
-pushd prepare_filesystem
-	env -i HOME=/home/lfs TERM=$TERM  bash /create_lfs_user_env.sh
-popd
-echo "Done"
-
-echo "Install cross compile toolchain"
-pushd install_x_compile
-	# MAKEFLAGS specific to school vm care
-	mkdir -pv /mnt/lfs/sources/build_all
-	cp * /mnt/lfs/sources/build_all
-	env -i HOME=/home/lfs TERM=$TERM MAKEFLAGS=-j6 su lfs -c "cd /mnt/lfs/sources/build_all && 
-		source ~/.bashrc
-		printenv > /home/lfs/env.txt &&
-		source /home/lfs/.bashrc && 
-		time sh build_total.sh"
-	
-popd
-echo "Done"
-
-echo "Chroot possibilities"
-cp -rf create_userland /mnt/lfs/
-pushd part_chroot
+#echo "Building network device ... "
+#pushd 1_build_networkdevice
+#	time sh create_networkdevice.sh
+#	export LFS=/mnt/lfs
+#popd
+#echo "Done"
+#
+#echo "Downloads packages ... "
+#pushd 2_download_packages
+#	time sh download_packages.sh &>download_packages.out
+#popd
+#echo "Done"
+#
+#echo "Prepare filesystem ... "
+#pushd 3_prepare_filesystem
+#	sh create_fs.sh  &>>prepare_filesystem.txt
+#	echo "==================================="
+#	sh create_lfs_user.sh &>>prepare_filesystem.txt
+#	cp lfs_user_script/create_lfs_user_env.sh /
+#popd
+#echo "Done"
+#
+#echo "Prepare lfs user env ... "
+#	env -i HOME=/home/lfs TERM=$TERM  bash /create_lfs_user_env.sh
+#echo "Done"
+#
+#echo "Install cross compile toolchain"
+#pushd 4_cross_compile_toolchain
+#	mkdir -pv /mnt/lfs/sources/build_x_compile
+#	cp * /mnt/lfs/sources/build_x_compile
+#	env -i HOME=/home/lfs TERM=$TERM MAKEFLAGS=-j$(nproc) su lfs -c "cd /mnt/lfs/sources/build_x_compile && 
+#		source /home/lfs/.bashrc && 
+#		time sh colonel_cross_compile.sh"
+#popd
+#echo "Done"
+#
+echo "Prepare chroot env"
+cp -rf 6_prepare_userland /mnt/lfs/
+pushd 5_prepare_chroot
 	sh chroot.sh
 	sh prepare_virtual_files_kernel.sh
 popd
 
-echo "Create userland"
-pushd create_userland
-	
-	sh enter_chroot.sh 
-		
+echo "Prepare userland"
+pushd 6_prepare_userland
+	time sh enter_chroot.sh 
 popd
 
+# next steps should be done manually while in chroot
+#echo "Configure userland"

@@ -1,0 +1,11 @@
+label: gpt
+label-id: 3EE873DB-F460-E042-8518-14EA414B4C4B
+device: lfs.raw
+unit: sectors
+first-lba: 2048
+last-lba: 41943006
+sector-size: 512
+
+lfs.raw1 : start=        2048, size=      409600, type=21686148-6449-6E6F-744E-656564454649, uuid=E397D72D-51F1-4248-B971-51F490594912
+lfs.raw2 : start=      411648, size=    33554432, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=3911DBF8-7693-E644-A90F-C2C1FCB45C72
+lfs.raw3 : start=    33966080, size=     7974912, type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F, uuid=498AEB94-EC54-1D43-9684-16CD2F195F7A
